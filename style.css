@@ -1015,7 +1015,7 @@ html, body {
 /* === Background Image Override (applies to about page only) === */
 body.about-page {
   background-color: #000105 !important;
-  background-image: url('background3.png') !important;
+  background-image: url('Background3.png') !important;
   background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
