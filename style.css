@@ -1106,11 +1106,27 @@ body.about-page.index-page::before {
   height: 100%;
   background-color: #042449;
   opacity: 0.8;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Add background image layer above the overlay */
+body.about-page.index-page::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Background3.png') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   z-index: 1;
   pointer-events: none;
 }
 
-/* Bring orbs above overlay on home page */
+/* Bring orbs above background image on home page */
 body.about-page.index-page .background-orb {
   z-index: 2;
 }
