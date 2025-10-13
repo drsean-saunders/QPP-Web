@@ -171,16 +171,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Background Base: deep navy → charcoal gradient */
+/* Background Base: Blue overlay with Background3.png on top */
 html, body {
-  /* Layered blues/greys for a richer glassy backdrop */
-  background:
-    radial-gradient(1200px 800px at 12% 8%, rgba(60, 78, 158, 0.25), rgba(20, 24, 48, 0) 60%),
-    radial-gradient(900px 700px at 85% 12%, rgba(42, 54, 120, 0.22), rgba(20, 24, 48, 0) 60%),
-    radial-gradient(1200px 800px at 50% 100%, rgba(15, 18, 43, 0.35), rgba(15, 18, 43, 0) 60%),
-    linear-gradient(180deg, #10142f 0%, #0c1027 45%, #0a0d20 100%);
+  background-color: #042449 !important;
+  background-image: url('Background3.png') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
   color: #ffffff;
-  min-height: 100%;
+  min-height: 100vh !important;
   perspective: 1000px;
   perspective-origin: 50% 50%;
 }
@@ -513,16 +513,16 @@ html, body {
 @tailwind components;
 @tailwind utilities;
 
-/* Background Base: deep navy → charcoal gradient */
+/* Background Base: Blue overlay with Background3.png on top */
 html, body {
-  /* Layered blues/greys for a richer glassy backdrop */
-  background:
-    radial-gradient(1200px 800px at 12% 8%, rgba(60, 78, 158, 0.25), rgba(20, 24, 48, 0) 60%),
-    radial-gradient(900px 700px at 85% 12%, rgba(42, 54, 120, 0.22), rgba(20, 24, 48, 0) 60%),
-    radial-gradient(1200px 800px at 50% 100%, rgba(15, 18, 43, 0.35), rgba(15, 18, 43, 0) 60%),
-    linear-gradient(180deg, #10142f 0%, #0c1027 45%, #0a0d20 100%);
+  background-color: #042449 !important;
+  background-image: url('Background3.png') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
   color: #ffffff;
-  min-height: 100%;
+  min-height: 100vh !important;
   perspective: 1000px;
   perspective-origin: 50% 50%;
 }
@@ -1012,16 +1012,7 @@ html, body {
   }
 }
 
-/* === Background Image Override (applies to about page only) === */
-body.about-page {
-  background-color: #000105 !important;
-  background-image: url('Background3.png') !important;
-  background-position: center center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-  min-height: 100vh !important;
-}
+/* === Background Image is now set globally on html/body === */
 
 /* Hide grid overlay (about page only) */
 .about-page .bg-grid { display: none !important; }
@@ -1096,45 +1087,9 @@ body.about-page.index-page .rounded-xl::before {
   display: none !important;
 }
 
-/* Add overlay on home page behind container but over background */
-body.about-page.index-page::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #042449;
-  opacity: 0.8;
-  z-index: 0;
-  pointer-events: none;
-}
+/* Background is now set globally on html/body - no overlay needed */
 
-/* Add background image layer above the overlay */
-body.about-page.index-page::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('Background3.png') !important;
-  background-position: center center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Bring orbs above background image on home page */
-body.about-page.index-page .background-orb {
-  z-index: 2;
-}
-
-/* Home page background color (matches about page) */
-body.home-page {
-  background-color: #000105 !important;
-}
+/* Background is now set globally on html/body */
 
 /* Remove glow effects from home page */
 .home-page .content-wrapper, 
