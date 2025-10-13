@@ -1,0 +1,1235 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Navigo:wght@300;400;500&family=Poppins:wght@700&display=swap');
+
+/* Custom tweaks, Tailwind handles most styling */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.animate-spin-slow {
+  animation: spin 14s linear infinite;
+}
+
+.pie-container {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  background: #0f122b;
+}
+
+.pillar-section {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle(50%);
+}
+
+.pillar-section:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 10;
+  filter: brightness(1.1);
+}
+
+.pillar-section-1 {
+  background: conic-gradient(from 0deg, #F8B636 0deg, #F8B636 120deg, transparent 120deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  /* Exact 120° sector shape: 0°–120° */
+  -webkit-mask: conic-gradient(from 0deg, #000 0 120deg, transparent 120deg 360deg);
+          mask: conic-gradient(from 0deg, #000 0 120deg, transparent 120deg 360deg);
+}
+
+.pillar-section-2 {
+  background: conic-gradient(from 120deg, #E78935 0deg, #E78935 120deg, transparent 120deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  /* Exact 120° sector shape: 120°–240° */
+  -webkit-mask: conic-gradient(from 120deg, #000 0 120deg, transparent 120deg 360deg);
+          mask: conic-gradient(from 120deg, #000 0 120deg, transparent 120deg 360deg);
+}
+
+.pillar-section-3 {
+  background: conic-gradient(from 240deg, #AC4B2C 0deg, #AC4B2C 120deg, transparent 120deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  /* Exact 120° sector shape: 240°–360° */
+  -webkit-mask: conic-gradient(from 240deg, #000 0 120deg, transparent 120deg 360deg);
+          mask: conic-gradient(from 240deg, #000 0 120deg, transparent 120deg 360deg);
+}
+
+.pillar-section-1:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 10;
+  filter: brightness(1.1);
+}
+
+.pillar-section-2:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 10;
+  filter: brightness(1.1);
+}
+
+.pillar-section-3:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 10;
+  filter: brightness(1.1);
+}
+
+.pillar-label {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+  pointer-events: none;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.pillar-section-1 .pillar-label {
+  transform: translate(25%, -15%);
+  z-index: 50
+  ;
+}
+
+.pillar-section-2 .pillar-label {
+  transform: translate(0%, 25%);
+  z-index: 50;
+}
+
+.pillar-section-3 .pillar-label {
+  transform: translate(-25%, -15%);
+  z-index: 50;
+}
+
+@media (max-width: 768px) {
+  .pie-container {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .pillar-section {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .pillar-label {
+    font-size: 12px;
+  }
+}
+
+/* Page theming (brighter accents per page) */
+.hero {
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.hero--story {
+  background: linear-gradient(135deg, rgba(36,46,120,.6), rgba(26,31,90,.6));
+}
+.hero--services {
+  background: linear-gradient(135deg, rgba(248,182,54,.25), rgba(231,137,53,.2), rgba(172,75,44,.2));
+}
+.hero--whyus {
+  background: linear-gradient(135deg, rgba(62,84,200,.35), rgba(33,41,110,.5));
+}
+.hero--team {
+  background: linear-gradient(135deg, rgba(102,66,204,.35), rgba(28,20,68,.45));
+}
+
+.card-bright {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.2);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+/* Tailwind base imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Background Base: deep navy → charcoal gradient */
+html, body {
+  /* Layered blues/greys for a richer glassy backdrop */
+  background:
+    radial-gradient(1200px 800px at 12% 8%, rgba(60, 78, 158, 0.25), rgba(20, 24, 48, 0) 60%),
+    radial-gradient(900px 700px at 85% 12%, rgba(42, 54, 120, 0.22), rgba(20, 24, 48, 0) 60%),
+    radial-gradient(1200px 800px at 50% 100%, rgba(15, 18, 43, 0.35), rgba(15, 18, 43, 0) 60%),
+    linear-gradient(180deg, #10142f 0%, #0c1027 45%, #0a0d20 100%);
+  color: #ffffff;
+  min-height: 100%;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+/* Background Blob */
+.background-orb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 420px;
+  height: 420px;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: -1; /* behind content wrapper but above page background */
+  background: radial-gradient(circle, rgba(255,160,40,1) 0%, rgba(255,170,70,0.9) 26%, rgba(255,140,60,0.4) 52%, rgba(0,0,0,0) 66%);
+  filter: blur(60px);
+  opacity: 1; /* brighter core */
+  transition: transform 1s ease-in-out, opacity 100ms ease, filter 100ms ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+  mix-blend-mode: screen;
+}
+
+/* Size helpers used by JS if needed */
+.background-orb.size-s { width: 260px; height: 260px; }
+.background-orb.size-m { width: 360px; height: 360px; }
+.background-orb.size-l { width: 420px; height: 420px; }
+
+.floating-blob {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(248,182,54,0.5), rgba(231,137,53,0.35), transparent 70%);
+  border-radius: 50%;
+  filter: blur(180px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+  animation: blob-breathe 20s ease-in-out infinite;
+  transition: transform 20s ease-in-out;
+}
+
+@keyframes blob-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* Glassmorphism Container */
+.content-wrapper {
+  position: relative;
+  background: linear-gradient(135deg, rgba(18, 24, 54, 0.72), rgba(18, 24, 54, 0.58));
+  backdrop-filter: blur(24px) saturate(120%);
+  -webkit-backdrop-filter: blur(24px) saturate(120%);
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.06);
+  border: 3px solid rgba(200,210,255,0.16);
+  padding: 3rem;
+  margin: 3rem 1rem;
+  max-width: 1280px;
+  overflow: hidden;
+}
+
+.content-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(215deg, rgba(255,255,255,0.10), rgba(255,255,255,0) 35%);
+  pointer-events: none;
+}
+
+/* Homepage brighter container with white-edged gradient */
+.content-wrapper--home {
+  background: 
+    linear-gradient(160deg, rgba(30, 38, 82, 0.55), rgba(28, 35, 76, 0.35)),
+    radial-gradient(140% 120% at 8% 0%, rgba(255,255,255,0.22), rgba(255,255,255,0) 42%),
+    radial-gradient(140% 120% at 95% 8%, rgba(255,255,255,0.20), rgba(255,255,255,0) 46%),
+    radial-gradient(160% 140% at 50% 100%, rgba(255,255,255,0.15), rgba(255,255,255,0) 55%);
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow:
+    0 22px 70px rgba(0,0,0,0.5),
+    0 0 40px rgba(255,255,255,0.12),
+    inset 0 0 0 1px rgba(255,255,255,0.18),
+    0 0 0 1px rgba(255,255,255,0.12);
+}
+
+.content-wrapper--home::before {
+  background: linear-gradient(215deg, rgba(255,255,255,0.28), rgba(255,255,255,0) 42%);
+}
+
+.content-wrapper--home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,0.35),
+    inset 0 0 60px rgba(255,255,255,0.18);
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    padding: 4rem;
+    margin: 3rem 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .content-wrapper {
+    padding: 5rem;
+    margin: 4rem auto;
+  }
+}
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* --- Subtle Grid Overlay with Intersection Dots --- */
+.bg-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    /* Grid lines - every 2nd horizontal line removed */
+    linear-gradient(rgba(255,255,255,0.05) 6px, transparent 6px, transparent 60px, rgba(255,255,255,0.05) 66px, transparent 66px, transparent 120px),
+    /* Grid lines - every 2nd vertical line removed */
+    linear-gradient(90deg, rgba(255,255,255,0.05) 6px, transparent 6px, transparent 60px, rgba(255,255,255,0.05) 66px, transparent 66px, transparent 120px);
+  background-size: 120px 120px;
+  background-position: 0 0, 0 0, 0 0;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Light theme inversion for Services page: white/platinum background with blue grid */
+.services-invert {
+  background:
+    radial-gradient(1200px 800px at 12% 8%, rgba(220, 228, 245, 0.25), rgba(255,255,255,0) 60%),
+    radial-gradient(900px 700px at 85% 12%, rgba(210, 220, 245, 0.22), rgba(255,255,255,0) 60%),
+    radial-gradient(1200px 800px at 50% 100%, rgba(235, 238, 248, 0.35), rgba(255,255,255,0) 60%),
+    linear-gradient(180deg, #f8fafc 0%, #f2f5fa 45%, #eef2f7 100%) !important;
+}
+
+.services-invert .bg-grid {
+  background-image:
+    linear-gradient(rgba(16,20,47,0.06) 4px, transparent 4px, transparent 80px, rgba(16,20,47,0.06) 84px, transparent 84px, transparent 160px),
+    linear-gradient(90deg, rgba(16,20,47,0.06) 4px, transparent 4px, transparent 80px, rgba(16,20,47,0.06) 84px, transparent 84px, transparent 160px);
+  background-size: 160px 160px;
+}
+
+/* Make text dark on light theme regardless of Tailwind text-white utilities */
+.services-invert, .services-invert * {
+  color: #0f122b !important;
+}
+
+/* Softer header background in light theme */
+.services-invert header {
+  background-color: rgba(255,255,255,0.7) !important;
+  border-color: rgba(16,20,47,0.08) !important;
+}
+/* --- Animated Wave Border --- */
+.wave-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-border::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  animation: wave-move 8s linear infinite, wave-fade 8s ease-in-out infinite;
+  animation-delay: 4s, 4s; /* half-cycle offset for seamless handoff */
+}
+
+.wave-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  animation: wave-move 8s linear infinite, wave-fade 8s ease-in-out infinite;
+}
+
+@keyframes wave-move {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.pillar-section-2 {
+  background: conic-gradient(from 120deg, #E78935 0deg, #E78935 120deg, transparent 120deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  /* Exact 120° sector shape: 120°–240° */
+  -webkit-mask: conic-gradient(from 120deg, #000 0 120deg, transparent 120deg 360deg);
+          mask: conic-gradient(from 120deg, #000 0 120deg, transparent 120deg 360deg);
+}
+
+.pillar-section-3 {
+  background: conic-gradient(from 240deg, #AC4B2C 0deg, #AC4B2C 120deg, transparent 120deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  /* Exact 120° sector shape: 240°–360° */
+  -webkit-mask: conic-gradient(from 240deg, #000 0 120deg, transparent 120deg 360deg);
+          mask: conic-gradient(from 240deg, #000 0 120deg, transparent 120deg 360deg);
+}
+
+.pillar-section-1:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 10;
+  filter: brightness(1.1);
+}
+
+.pillar-section-2:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 10;
+  filter: brightness(1.1);
+}
+
+.pillar-section-3:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 10;
+  filter: brightness(1.1);
+}
+
+.pillar-label {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+  pointer-events: none;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.pillar-section-1 .pillar-label {
+  transform: translate(25%, -15%);
+  z-index: 50
+  ;
+}
+
+.pillar-section-2 .pillar-label {
+  transform: translate(0%, 25%);
+  z-index: 50;
+}
+
+.pillar-section-3 .pillar-label {
+  transform: translate(-25%, -15%);
+  z-index: 50;
+}
+
+@media (max-width: 768px) {
+  .pie-container {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .pillar-section {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .pillar-label {
+    font-size: 12px;
+  }
+}
+
+/* Page theming (brighter accents per page) */
+.hero {
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.hero--story {
+  background: linear-gradient(135deg, rgba(36,46,120,.6), rgba(26,31,90,.6));
+}
+.hero--services {
+  background: linear-gradient(135deg, rgba(248,182,54,.25), rgba(231,137,53,.2), rgba(172,75,44,.2));
+}
+.hero--whyus {
+  background: linear-gradient(135deg, rgba(62,84,200,.35), rgba(33,41,110,.5));
+}
+.hero--team {
+  background: linear-gradient(135deg, rgba(102,66,204,.35), rgba(28,20,68,.45));
+}
+
+.card-bright {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.2);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+/* Tailwind base imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Background Base: deep navy → charcoal gradient */
+html, body {
+  /* Layered blues/greys for a richer glassy backdrop */
+  background:
+    radial-gradient(1200px 800px at 12% 8%, rgba(60, 78, 158, 0.25), rgba(20, 24, 48, 0) 60%),
+    radial-gradient(900px 700px at 85% 12%, rgba(42, 54, 120, 0.22), rgba(20, 24, 48, 0) 60%),
+    radial-gradient(1200px 800px at 50% 100%, rgba(15, 18, 43, 0.35), rgba(15, 18, 43, 0) 60%),
+    linear-gradient(180deg, #10142f 0%, #0c1027 45%, #0a0d20 100%);
+  color: #ffffff;
+  min-height: 100%;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+/* Background Blob */
+.background-orb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 420px;
+  height: 420px;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: -1; /* behind content wrapper but above page background */
+  background: radial-gradient(circle, rgba(255,160,40,1) 0%, rgba(255,170,70,0.9) 26%, rgba(255,140,60,0.4) 52%, rgba(0,0,0,0) 66%);
+  filter: blur(60px);
+  opacity: 1; /* brighter core */
+  transition: transform 1s ease-in-out, opacity 100ms ease, filter 100ms ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+  mix-blend-mode: screen;
+}
+
+/* Size helpers used by JS if needed */
+.background-orb.size-s { width: 260px; height: 260px; }
+.background-orb.size-m { width: 360px; height: 360px; }
+.background-orb.size-l { width: 420px; height: 420px; }
+
+.floating-blob {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(248,182,54,0.5), rgba(231,137,53,0.35), transparent 70%);
+  border-radius: 50%;
+  filter: blur(180px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+  animation: blob-breathe 20s ease-in-out infinite;
+  transition: transform 20s ease-in-out;
+}
+
+@keyframes blob-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* Glassmorphism Container */
+.content-wrapper {
+  position: relative;
+  --wrapper-pad: 3rem;
+  background: linear-gradient(135deg, rgba(18, 24, 54, 0.3), rgba(18, 24, 54, 0.2));
+  backdrop-filter: blur(24px) saturate(120%);
+  -webkit-backdrop-filter: blur(24px) saturate(120%);
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.06);
+  border: 3px solid rgba(200,210,255,0.16);
+  padding: var(--wrapper-pad);
+  margin: 3rem 1rem;
+  max-width: 1280px;
+  overflow: hidden;
+}
+
+/* Utility to let a child stretch to the wrapper edges (matching padding) */
+.edge-to-edge {
+  margin-left: calc(-1 * var(--wrapper-pad));
+  margin-right: calc(-1 * var(--wrapper-pad));
+  margin-top: calc(-1 * var(--wrapper-pad));
+  margin-bottom: 0;
+}
+
+.content-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(215deg, rgba(255,255,255,0.10), rgba(255,255,255,0) 35%);
+  pointer-events: none;
+}
+
+/* Softer, more transparent header background */
+.content-wrapper > header {
+  background-color: rgba(15, 18, 43, 0.38);
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    --wrapper-pad: 4rem;
+    padding: var(--wrapper-pad);
+    margin: 3rem 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .content-wrapper {
+    --wrapper-pad: 5rem;
+    padding: var(--wrapper-pad);
+    margin: 4rem auto;
+  }
+}
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* --- Subtle Grid Overlay with Intersection Dots --- */
+.bg-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    /* Grid lines - every 2nd horizontal line removed */
+    linear-gradient(rgba(255,255,255,0.04) 4px, transparent 4px, transparent 80px, rgba(255,255,255,0.04) 84px, transparent 84px, transparent 160px),
+    /* Grid lines - every 2nd vertical line removed */
+    linear-gradient(90deg, rgba(255,255,255,0.04) 4px, transparent 4px, transparent 80px, rgba(255,255,255,0.04) 84px, transparent 84px, transparent 160px);
+  background-size: 160px 160px;
+  background-position: 0 0, 0 0, 0 0;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* --- Animated Wave Border --- */
+.wave-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  animation: wave-move 2.5s ease-in-out infinite alternate;
+}
+
+.wave-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  animation: wave-move 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes wave-move {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes wave-fade {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
+}
+
+/* Override: show wave only on the bottom edge */
+.wave-border::before {
+  display: none !important;
+}
+
+/* Enhanced Glassmorphism Header */
+.glass-header {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.4) 0%, 
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0.3) 100%);
+  pointer-events: none;
+}
+
+.glass-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    transparent 100%);
+  pointer-events: none;
+  animation: glass-shine 3s ease-in-out infinite;
+}
+
+@keyframes glass-shine {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* Glass Button with Gradient */
+.glass-button {
+  background: linear-gradient(135deg, 
+    rgba(248, 182, 54, 0.9) 0%, 
+    rgba(231, 137, 53, 0.8) 30%,
+    rgba(172, 75, 44, 0.7) 60%,
+    rgba(255, 255, 255, 0.25) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 1rem;
+  pointer-events: none;
+}
+
+.glass-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 8px 25px rgba(248, 182, 54, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Logo Gradient Background */
+.logo-gradient {
+  background: radial-gradient(circle at center, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(255, 255, 255, 0.7) 20%,
+    rgba(255, 255, 255, 0.5) 40%,
+    rgba(255, 255, 255, 0.3) 60%,
+    rgba(255, 255, 255, 0.1) 80%,
+    rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, 
+    rgba(255, 255, 255, 0.4) 0%, 
+    rgba(255, 255, 255, 0.2) 30%,
+    rgba(255, 255, 255, 0.1) 60%,
+    transparent 100%);
+  border-radius: 0.75rem;
+  pointer-events: none;
+}
+
+/* Radial Gradient Background */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at bottom 40%, 
+    rgba(255, 255, 255, 0.8) 0%, 
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 100%);
+}
+
+/* Logo with Text Background */
+.logo-with-border {
+  position: relative;
+}
+
+.logo-with-border::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: white;
+  border-radius: 8px;
+  z-index: -1;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Moving Wave Animation Below Header */
+.wave-animation {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  animation: wave-move 8s linear infinite, wave-fade 8s ease-in-out infinite;
+  animation-delay: 4s, 4s; /* half-cycle offset for seamless handoff */
+}
+
+.wave-animation::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  animation: wave-move 8s linear infinite, wave-fade 8s ease-in-out infinite;
+}
+
+/* Custom rounded image styling */
+.rounded-image {
+  border-radius: 1rem !important;
+  overflow: hidden;
+}
+
+/* Ensure consistent image aspect/positioning on team page */
+.team-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Make team member cards equal height */
+.team-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 680px;
+}
+
+@media (max-width: 1024px) {
+  .team-card { min-height: 600px; }
+}
+
+@media (max-width: 768px) {
+  .team-card { min-height: auto; }
+}
+
+/* Orb Animation Classes with Random Positioning - Performance Optimized */
+.orb-first {
+  top: 5%;
+  left: 65%;
+  animation: moveVertical 17s ease infinite;
+  /* Performance optimizations */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/*.orb-second {
+  top: 57%;
+  left: 0%;
+  animation: moveInCircle 17s reverse infinite;
+  /* Performance optimizations */
+ /* backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}*/
+
+.orb-third {
+  top: 80%;
+  left: 15%;
+  animation: moveInCircle 17s linear infinite;
+  /* Performance optimizations */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* New Animation Keyframes - Enhanced for Free Movement */
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-30%) translateY(-20%);
+  }
+  25% {
+    transform: translateX(20%) translateY(15%);
+  }
+  50% {
+    transform: translateX(40%) translateY(-10%);
+  }
+  75% {
+    transform: translateX(10%) translateY(25%);
+  }
+  100% {
+    transform: translateX(-30%) translateY(-20%);
+  }
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg) translateX(20%) translateY(0%);
+  }
+  25% {
+    transform: rotate(90deg) translateX(0%) translateY(20%);
+  }
+  50% {
+    transform: rotate(180deg) translateX(-20%) translateY(0%);
+  }
+  75% {
+    transform: rotate(270deg) translateX(0%) translateY(-20%);
+  }
+  100% {
+    transform: rotate(360deg) translateX(20%) translateY(0%);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-30%) translateX(-15%);
+  }
+  25% {
+    transform: translateY(10%) translateX(20%);
+  }
+  50% {
+    transform: translateY(40%) translateX(-10%);
+  }
+  75% {
+    transform: translateY(20%) translateX(25%);
+  }
+  100% {
+    transform: translateY(-30%) translateX(-15%);
+  }
+}
+
+/* Performance: Disable animations on low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  .background-orb {
+    animation: none !important;
+  }
+}
+
+/* Performance: Reduce animations on mobile devices */
+@media (max-width: 768px) {
+  .background-orb {
+    filter: blur(40px); /* Reduce blur for better performance */
+  }
+  
+  .orb-first,
+  .orb-second,
+  .orb-third {
+    animation-duration: 20s; /* Slower animations on mobile */
+  }
+}
+
+/* === Background Image Override (applies to about page only) === */
+body.about-page {
+  background-color: #000105 !important;
+  background-image: url('background3.png') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  min-height: 100vh !important;
+}
+
+/* Hide grid overlay (about page only) */
+.about-page .bg-grid { display: none !important; }
+
+/* Electronic glowing container edges (about page only) */
+.about-page .content-wrapper, 
+.about-page header, 
+.about-page section, 
+.about-page .rounded-2xl, 
+.about-page .rounded-xl {
+  position: relative;
+  box-shadow: 
+    0 0 0 1px #023E73,
+    0 0 10px rgba(2, 62, 115, 0.3),
+    0 0 20px rgba(0, 47, 98, 0.2),
+    inset 0 0 0 1px rgba(2, 62, 115, 0.1);
+}
+
+.about-page .content-wrapper::before,
+.about-page header::before,
+.about-page section::before,
+.about-page .rounded-2xl::before,
+.about-page .rounded-xl::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #023E73, #002F62, #023E73);
+  z-index: -1;
+  opacity: 0.6;
+  filter: blur(1px);
+}
+
+/* Enhanced glow for interactive elements (about page only) */
+.about-page .rounded-2xl:hover,
+.about-page .rounded-xl:hover {
+  box-shadow: 
+    0 0 0 1px #023E73,
+    0 0 15px rgba(2, 62, 115, 0.5),
+    0 0 30px rgba(0, 47, 98, 0.3),
+    inset 0 0 0 1px rgba(2, 62, 115, 0.2);
+}
+
+/* Remove glow effects for specific elements */
+.no-glow {
+  box-shadow: none !important;
+}
+
+.no-glow::before {
+  display: none !important;
+}
+
+/* Remove glow effects from home page (index.html) */
+body.about-page.index-page .content-wrapper,
+body.about-page.index-page header,
+body.about-page.index-page section,
+body.about-page.index-page .rounded-2xl,
+body.about-page.index-page .rounded-xl {
+  box-shadow: none !important;
+  position: relative;
+  z-index: 2;
+}
+
+body.about-page.index-page .content-wrapper::before,
+body.about-page.index-page header::before,
+body.about-page.index-page section::before,
+body.about-page.index-page .rounded-2xl::before,
+body.about-page.index-page .rounded-xl::before {
+  display: none !important;
+}
+
+/* Add overlay on home page behind container but over background */
+body.about-page.index-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #042449;
+  opacity: 0.8;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Bring orbs above overlay on home page */
+body.about-page.index-page .background-orb {
+  z-index: 2;
+}
+
+/* Home page background color (matches about page) */
+body.home-page {
+  background-color: #000105 !important;
+}
+
+/* Remove glow effects from home page */
+.home-page .content-wrapper, 
+.home-page header, 
+.home-page section, 
+.home-page .rounded-2xl, 
+.home-page .rounded-xl {
+  box-shadow: none !important;
+}
+
+.home-page .content-wrapper::before,
+.home-page header::before,
+.home-page section::before,
+.home-page .rounded-2xl::before,
+.home-page .rounded-xl::before {
+  display: none !important;
+}
+
+/* Typography: Figtree ExtraBold for headers, titles, and Quantum text */
+h1, h2, h3, h4, h5, h6, .font-bold, .font-semibold {
+  font-family: 'Figtree', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+/* Override Tailwind font classes specifically */
+.font-bold, .font-semibold, .font-extrabold, .font-black {
+  font-family: 'Figtree', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+/* Quantum logo text specifically */
+.text-2xl.font-bold,
+.text-2xl.font-bold.text-white,
+.text-2xl.font-bold.text-center {
+  font-family: 'Figtree', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+/* Additional header and title classes */
+.hero-title, .section-title, .page-title, .main-title {
+  font-family: 'Figtree', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+/* Force Figtree on all text size classes when combined with bold */
+.text-4xl.font-bold, .text-5xl.font-bold, .text-6xl.font-bold,
+.text-3xl.font-bold, .text-2xl.font-bold, .text-xl.font-bold,
+.text-lg.font-bold, .text-base.font-bold, .text-sm.font-bold {
+  font-family: 'Figtree', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+/* Target specific elements that might be using different classes */
+*[class*="text-"][class*="font-bold"],
+*[class*="text-"][class*="font-semibold"],
+*[class*="text-"][class*="font-extrabold"] {
+  font-family: 'Figtree', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+/* Ensure all heading sizes use Figtree */
+h1.text-4xl, h1.text-5xl, h1.text-6xl,
+h2.text-3xl, h2.text-4xl, h2.text-5xl,
+h3.text-2xl, h3.text-3xl, h3.text-4xl,
+h4.text-xl, h4.text-2xl, h4.text-3xl,
+h5.text-lg, h5.text-xl, h5.text-2xl,
+h6.text-base, h6.text-lg, h6.text-xl {
+  font-family: 'Figtree', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+p, span, div, .text-sm, .text-base, .text-lg, .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, 
+.secondary-text, .description, .subtitle, .meta, .caption {
+  font-family: 'Navigo', sans-serif;
+  font-weight: 300;
+}
+
+/* Ensure all text elements use the correct fonts */
+body, html {
+  font-family: 'Navigo', sans-serif;
+  font-weight: 300;
+}
+
+/* FINAL OVERRIDE: Force Figtree on all bold elements */
+body *[class*="font-bold"],
+body *[class*="font-semibold"], 
+body *[class*="font-extrabold"],
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-family: 'Figtree', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+/* ULTIMATE OVERRIDE - Maximum specificity */
+html body *[class*="font-bold"],
+html body *[class*="font-semibold"], 
+html body *[class*="font-extrabold"],
+html body h1, html body h2, html body h3, html body h4, html body h5, html body h6,
+html body .text-2xl.font-bold,
+html body .text-3xl.font-bold,
+html body .text-4xl.font-bold,
+html body .text-5xl.font-bold,
+html body .text-6xl.font-bold {
+  font-family: 'Figtree', sans-serif !important;
+  font-weight: 800 !important;
+  font-style: normal !important;
+}
+
+/* Force font loading */
+@font-face {
+  font-family: 'Figtree';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}

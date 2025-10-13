@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You • Quantum Performance Partners</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="text-white about-page">
+  <div class="bg-grid"></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="relative z-10 backdrop-blur bg-[#0f122b]/60 rounded-t-2xl w-full">
+      <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+        <a href="index.html" class="font-semibold tracking-wide text-xl">
+          <span class="inline-flex items-center text-white px-1 py-0 leading-none">
+            <img src="LOGO-01.png" alt="Quantum Performance Partners" class="h-20 mr-3" />
+            <div class="text-left">
+              <div class="text-2xl font-bold text-white text-center">Quantum</div>
+              <div class="text-base font-light text-white">Performance Partners</div>
+            </div>
+          </span>
+        </a>
+        <nav class="hidden md:flex gap-8 text-sm">
+          <a href="index.html" class="hover:opacity-80">Home</a>
+          <a href="Services.html" class="hover:opacity-80">Services</a>
+          <a href="about.html" class="hover:opacity-80">About Us</a>
+          <a href="insights.html" class="hover:opacity-80 hidden">Insights</a>
+          <a href="careers.html" class="hover:opacity-80 hidden">Careers</a>
+          <a href="contact.html" class="hover:opacity-80">Contact</a>
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-white/10">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <a href="contact.html" class="hidden md:block rounded-2xl px-4 py-2 bg-gradient-to-r from-[#F8B636] via-[#E78935] to-[#AC4B2C] text-sm font-medium shadow">Let's Connect</a>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full right-6 w-64 bg-[#0f122b]/95 backdrop-blur border border-white/10 rounded-b-2xl shadow-lg z-50">
+        <div class="px-6 py-4 space-y-3">
+          <a href="index.html" class="block py-2 text-sm hover:opacity-80">Home</a>
+          <a href="Services.html" class="block py-2 text-sm hover:opacity-80">Services</a>
+          <a href="about.html" class="block py-2 text-sm hover:opacity-80">About Us</a>
+          <a href="insights.html" class="block py-2 text-sm hover:opacity-80 hidden">Insights</a>
+          <a href="careers.html" class="block py-2 text-sm hover:opacity-80 hidden">Careers</a>
+          <a href="contact.html" class="block py-2 text-sm hover:opacity-80">Contact</a>
+          <a href="contact.html" class="block mt-4 rounded-2xl px-4 py-2 bg-gradient-to-r from-[#F8B636] via-[#E78935] to-[#AC4B2C] text-sm font-medium shadow text-center">Let's Connect</a>
+        </div>
+      </div>
+  </header>
+
+  <!-- ===== THANK YOU CONTENT ===== -->
+  <section class="min-h-screen flex items-center justify-center py-20">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <div class="mb-8">
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">Thank You for Your Message!</h1>
+        <p class="text-white/80 max-w-2xl mx-auto mb-8">
+          We appreciate you reaching out. Our team will review your inquiry and get back to you as soon as we can.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="index.html" class="rounded-xl px-6 py-3 bg-white text-[#0f122b] font-semibold shadow">Back to Home</a>
+          <a href="contact.html" class="rounded-xl px-6 py-3 ring-1 ring-white/30 hover:ring-white/60">Contact Us Again</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="py-10 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-6 grid md:grid-cols-3 items-center gap-6 text-sm text-white/70">
+      <div class="flex gap-4 justify-center md:justify-start">
+        <a href="https://www.linkedin.com/company/quantum-performance-partners" target="_blank" rel="noopener" class="hover:opacity-80">LinkedIn</a>
+      </div>
+      <nav class="flex flex-wrap gap-6 justify-center">
+        <a href="index.html" class="hover:opacity-80">Home</a>
+        <a href="Services.html" class="hover:opacity-80">Services</a>
+        <a href="about.html" class="hover:opacity-80">About Us</a>
+        <a href="contact.html" class="hover:opacity-80">Contact</a>
+      </nav>
+      <div class="text-center md:text-right">
+        <p class="mb-2">231 Detroit St #100<br/>Denver, CO 80206</p>
+        © 2025 Quantum Performance Partners
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('mobile-menu-button');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          menu.classList.toggle('hidden');
+        });
+        
+        // Close menu when clicking links
+        menu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            menu.classList.add('hidden');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

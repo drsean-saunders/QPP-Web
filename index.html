@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum Performance Partners</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="text-white about-page index-page">
+  <div class="bg-grid"></div>
+
+  <!-- Background Orbs -->
+  <div class="background-orb orb-first"></div>
+  <!--<div class="background-orb orb-second"></div>-->
+  <div class="background-orb orb-third"></div>
+
+  <!-- Glassmorphism Content Wrapper -->
+  <div class="content-wrapper content-wrapper--home">
+
+    <!-- ===== NAV ===== -->
+    <header class="relative z-10 backdrop-blur bg-[#0f122b]/60 border-b border-white/10 rounded-t-2xl edge-to-edge">
+      <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+        <a href="index.html" class="font-semibold tracking-wide text-xl">
+          <span class="inline-flex items-center text-[#0f122b] px-1 py-0 rounded-xl shadow leading-none">
+            <img src="LOGO-01.png" alt="Quantum Performance Partners" class="h-20 mr-3" />
+            <div class="text-left">
+              <div class="text-2xl font-bold text-white text-center">Quantum</div>
+              <div class="text-base font-light text-white">Performance Partners</div>
+            </div>
+          </span>
+        </a>
+        <nav class="hidden md:flex gap-8 text-sm">
+          <a href="Services.html" class="hover:opacity-80">Services</a>
+          <a href="about.html" class="hover:opacity-80">About Us</a>
+          <a href="insights.html" class="hover:opacity-80 hidden">Insights</a>
+          <a href="careers.html" class="hover:opacity-80 hidden">Careers</a>
+          <a href="contact.html" class="hover:opacity-80">Contact</a>
+        </nav>
+        
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-white/10">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        
+        <a href="contact.html" class="hidden md:block rounded-2xl px-4 py-2 bg-gradient-to-r from-[#F8B636] via-[#E78935] to-[#AC4B2C] text-sm font-medium shadow">Let's Connect</a>
+      </div>
+      <!-- Mobile Navigation Menu (anchored to header) -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full right-6 w-64 bg-[#0f122b]/95 backdrop-blur border border-white/10 rounded-b-2xl shadow-lg z-50">
+        <div class="px-6 py-4 space-y-3">
+          <a href="Services.html" class="block py-2 text-sm hover:opacity-80">Services</a>
+          <a href="about.html" class="block py-2 text-sm hover:opacity-80">About Us</a>
+          <a href="insights.html" class="block py-2 text-sm hover:opacity-80 hidden">Insights</a>
+          <a href="careers.html" class="block py-2 text-sm hover:opacity-80 hidden">Careers</a>
+          <a href="contact.html" class="block py-2 text-sm hover:opacity-80">Contact</a>
+          <a href="contact.html" class="block mt-4 rounded-2xl px-4 py-2 bg-gradient-to-r from-[#F8B636] via-[#E78935] to-[#AC4B2C] text-sm font-medium shadow text-center">Let's Connect</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="uppercase text-xs tracking-[0.2em] text-white/60">Technology-Driven</p>
+          <h1 class="mt-3 text-4xl md:text-6xl font-bold leading-tight">
+            Where Strategy Meets Execution
+          </h1>
+          <p class="mt-4 text-white/80 max-w-xl">
+            Transforming potential into unparalleled results for private equity and portfolio companies worldwide.
+          </p>
+          <div class="mt-8 flex gap-4">
+            <a href="#contact" class="rounded-xl px-5 py-3 bg-white text-[#0f122b] font-semibold shadow">Schedule a Consultation</a>
+            <a href="#services" class="rounded-xl px-5 py-3 ring-1 ring-white/30 hover:ring-white/60">Explore Our Services</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ===== OUR THREE PILLARS (Services) ===== -->
+    <section id="services" class="py-20">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Pillars of Value</h2>
+          <p class="text-white/70 text-lg max-w-2xl mx-auto">
+            We deliver results — not hours. Click any pillar to explore our capabilities.
+          </p>
+          <p class="text-white/70 max-w-3xl mx-auto mt-4">
+            At Quantum, we’re more than advisors. We are transformation partners who embed with your team, accelerate execution, and deliver measurable value across the deal lifecycle.
+          </p>
+        </div>
+
+        <!-- Interactive Pie Chart -->
+        <div class="pie-container">
+          <svg class="wheel" width="100%" height="100%" viewBox="0 0 450 450" xmlns="http://www.w3.org/2000/svg">
+            <style>
+              .wedge { cursor: pointer; transition: transform .25s ease, filter .25s ease; transform-origin: 225px 225px; }
+              .wedge:hover { transform: scale(1.05); filter: brightness(1.1); }
+              .wedge text { font: 700 14px system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill: #fff; text-anchor: middle; dominant-baseline: middle; pointer-events: none; }
+            </style>
+            <!-- Geometry constants: center (225,225), radius 200 to keep outer gap -->
+            <!-- Wedge 1: 0° -> 120° (Yellow) -->
+            <g class="wedge" onclick="navigateToService('ma-execution')">
+              <path fill="#F8B636" d="M225,225 L425,225 A200,200 0 0 1 125,398.2 Z"/>
+              <text x="285" y="315" text-anchor="middle" dominant-baseline="middle">
+                  <tspan x="285" dy="-0.6em">M&A</tspan>
+                  <tspan x="285" dy="1.2em">Advisory</tspan>
+              </text>
+            </g>
+            <!-- Wedge 2: 120° -> 240° (Orange) -->
+            <g class="wedge" onclick="navigateToService('operational-transformation')">
+              <path fill="#E78935" d="M225,225 L125,398.2 A200,200 0 0 1 125,51.8 Z"/>
+              <text x="120" y="225" text-anchor="middle" dominant-baseline="middle">
+                  <tspan x="120" dy="-0.6em">Strategy</tspan>
+                  <tspan x="120" dy="1.2em">Execution Partners</tspan>
+                </text>
+            </g>
+            <!-- Wedge 3: 240° -> 360° (Red) -->
+            <g class="wedge" onclick="navigateToService('industry-capability')">
+              <path fill="#AC4B2C" d="M225,225 L125,51.8 A200,200 0 0 1 425,225 Z"/>
+              <text x="285" y="135" text-anchor="middle" dominant-baseline="middle">
+                <tspan x="285" dy="-0.6em">AI &amp; Digital</tspan>
+                <tspan x="285" dy="1.2em">Transformation</tspan>
+              </text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Description -->
+        <div class="mt-16 text-center">
+          <p class="text-white/60 text-sm">
+            Each pillar represents a core area of expertise that drives enterprise value creation
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROOF & CREDIBILITY STRIP ===== -->
+    <section class="py-12">
+      <div class="mx-auto max-w-7xl px-6 text-center">
+        <p class="uppercase text-xs tracking-[0.2em] text-white/60 mb-4">Trusted Globally</p>
+        <h3 class="text-xl md:text-2xl font-semibold mb-2">Trusted by private equity firms and portfolio companies worldwide</h3>
+        <p class="text-white/80 max-w-3xl mx-auto">Recognized for thought leadership, research, and execution expertise — including Top 50 Business Transformers and Inc. 100 mentions.</p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-6 opacity-90">
+          <img src="LOGO-01.png" alt="Quantum Mark" class="h-12">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LEADERSHIP (Preview) ===== -->
+    <section id="leadership" class="py-20">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="flex items-end justify-between gap-4 mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold">Leadership</h2>
+          <a href="about.html#who-we-are" class="text-sm underline hover:opacity-80">Meet the full team →</a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Dr. Sean Saunders -->
+          <div class="rounded-2xl p-6 border border-white/10 bg-white/5">
+            <img src="Sean+Saunders_Quantum+PP.webp" alt="Dr. Sean Saunders" class="w-full h-56 object-contain rounded-image">
+            <div class="mt-4">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-semibold">Dr. Sean Saunders</p>
+                  <p class="text-sm text-white/70">Managing Partner & Founder</p>
+                </div>
+                <a href="https://www.linkedin.com/in/therealdrsean/" target="_blank" rel="noopener" class="text-sm underline hover:opacity-80">LinkedIn</a>
+              </div>
+              <div class="mt-3 text-sm text-white/80">
+                <p class="font-semibold mb-2">Education & Credentials:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Doctor of Computer Science, Colorado Technical University</li>
+                  <li>Certified Professional in Supply Management (CPSM)</li>
+                </ul>
+                <p class="font-semibold mb-2 mt-3">Experience:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>CFO and COO for multiple Private Equity backed companies</li>
+                  <li>Published author with patents in AI, Business, and Medicine</li>
+                  <li>Recognized by The Enterprise World and Titan 100</li>
+                </ul>
+                <p class="font-semibold mb-2 mt-3">Specialization:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Information Technology and Digitalization</li>
+                  <li>Finance and Accounting</li>
+                  <li>Operations and M&A</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seth Weiss -->
+          <div class="rounded-2xl p-6 border border-white/10 bg-white/5">
+            <img src="Headshot - Seth.jpeg" alt="Seth Weiss" class="w-full h-56 object-contain rounded-image">
+            <div class="mt-4">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-semibold">Seth Weiss</p>
+                  <p class="text-sm text-white/70">Managing Partner & Co-Founder</p>
+                </div>
+                <a href="https://www.linkedin.com/in/sethweiss13/" target="_blank" rel="noopener" class="text-sm underline hover:opacity-80">LinkedIn</a>
+              </div>
+              <div class="mt-3 text-sm text-white/80">
+                <p class="font-semibold mb-2">Experience:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>25+ years leading operations, sales, and growth initiatives</li>
+                  <li>Corporate M&A law, entrepreneurship, and executive roles</li>
+                  <li>Scaled revenue engines and commercialized disruptive platforms</li>
+                </ul>
+                <p class="font-semibold mb-2 mt-3">Credentials & Methodology:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Certified Executive Coach</li>
+                  <li>Creator of the "Beyond A Sale" methodology</li>
+                  <li>Builds high-performing teams with curiosity, trust, and accountability</li>
+                </ul>
+                <p class="font-semibold mb-2 mt-3">Specialization:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>SaaS, AI, and consulting industries</li>
+                  <li>Legal rigor and operational expertise</li>
+                  <li>Strategy and execution for lower middle market companies</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 text-center">
+          <a href="about.html" class="rounded-xl px-5 py-3 bg-white text-[#0f122b] font-semibold shadow inline-block">Learn more about us</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== WHY US ===== -->
+    <section id="whyus" class="py-20">
+      <div class="mx-auto max-w-7xl px-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Built Different. Built for Results.</h2>
+        <p class="max-w-3xl text-base md:text-lg leading-relaxed text-white/90 mb-6">
+          Other firms bill hours and extend engagements. Quantum was built to deliver outcomes. Our team of senior private equity executives and thought leaders embeds directly with management teams to drive execution. We don't stop until measurable value is created.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
+          <div class="rounded-2xl border border-white/10 p-4 bg-white/5">
+            <p class="font-semibold mb-1">Quantum</p>
+            <ul class="text-sm text-white/90 list-disc pl-5 space-y-1">
+              <li>Outcomes-first</li>
+              <li>Embedded leadership</li>
+              <li>Proprietary digital tools</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-white/10 p-4 bg-white/5">
+            <p class="font-semibold mb-1">Traditional Firms</p>
+            <ul class="text-sm text-white/90 list-disc pl-5 space-y-1">
+              <li>Billable hours</li>
+              <li>Slide decks only</li>
+              <li>No ownership in execution</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RESULTS SNAPSHOT ===== -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Proven Impact. Real Results.</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+            <p class="text-3xl font-bold">$100M+</p>
+            <p class="text-white/80">EBITDA uplift delivered</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+            <p class="text-3xl font-bold">Up to 12 mo</p>
+            <p class="text-white/80">accelerated exits</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+            <p class="text-3xl font-bold">&lt; 90 days</p>
+            <p class="text-white/80">digital transformation roadmaps executed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section id="contact" class="py-20 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold">Turn complexity into enterprise value.</h2>
+      <form id="contact-form" class="mt-8 grid md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
+        <input name="name" placeholder="Your Name" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
+        <input name="email" type="email" placeholder="Your Email" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
+        <textarea name="message" placeholder="Your Message" rows="4" class="rounded-xl px-4 py-3 bg-white/90 text-black md:col-span-2"></textarea>
+        <button type="submit" class="rounded-xl px-5 py-3 bg-gradient-to-r from-[#F8B636] via-[#E78935] to-[#AC4B2C] text-white font-semibold shadow">Request Intro</button>
+      </form>
+      <p class="mt-6 text-sm">231 Detroit St #100, Denver, CO 80206</p>
+    </section>
+
+    
+
+    <!-- ===== FOOTER (Consistent Across Pages) ===== -->
+    <footer class="py-10 border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-6 grid md:grid-cols-3 items-center gap-6 text-sm text-white/70">
+        <!-- Left: Social -->
+        <div class="flex gap-4 justify-center md:justify-start">
+          <a href="https://www.linkedin.com/company/quantum-performance-partners" target="_blank" rel="noopener" class="hover:opacity-80">LinkedIn</a>
+        </div>
+
+        <!-- Center: Quick nav -->
+        <nav class="flex flex-wrap gap-6 justify-center">
+          <a href="index.html" class="hover:opacity-80">Home</a>
+          <a href="Services.html" class="hover:opacity-80">Services</a>
+          <a href="about.html" class="hover:opacity-80">About Us</a>
+          <a href="contact.html" class="hover:opacity-80">Contact</a>
+        </nav>
+
+        <!-- Right: Address & Copyright -->
+        <div class="text-center md:text-right">
+          <p class="mb-2">231 Detroit St #100<br/>Denver, CO 80206</p>
+          © 2025 Quantum Performance Partners
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- end content-wrapper -->
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  
+  <!-- Inline mobile menu script for immediate functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('mobile-menu-button');
+      const menu = document.getElementById('mobile-menu');
+      
+      if (btn && menu) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          menu.classList.toggle('hidden');
+        });
+        
+        // Close menu when clicking links
+        menu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            menu.classList.add('hidden');
+          });
+        });
+      }
+
+      // Contact form submission
+      const form = document.getElementById('contact-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Get form data
+          const formData = new FormData(form);
+          const name = formData.get('name') || '';
+          const email = formData.get('email') || '';
+          const message = formData.get('message') || '';
+          
+          // Validate required fields
+          if (!name.trim() || !email.trim() || !message.trim()) {
+            alert('Please fill in all required fields (Name, Email, and Message).');
+            return;
+          }
+          
+          // Show loading state
+          const submitButton = form.querySelector('button[type="submit"]');
+          const originalText = submitButton.textContent;
+          submitButton.textContent = 'Sending...';
+          submitButton.disabled = true;
+          
+          // Submit to n8n webhook
+          fetch('https://unstabledesigns.app.n8n.cloud/webhook-test/contact-form', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            if (response.ok) {
+              // Success - redirect to thank you page
+              window.location.href = 'thank-you.html';
+            } else {
+              throw new Error('Form submission failed');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error submitting your message. Please try again or contact us directly.');
+            // Reset button state
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+          });
+        });
+      }
+    });
+  </script>
+  
+</body>
+</html>
