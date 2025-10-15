@@ -1314,3 +1314,18 @@ html, body {
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
 }
+
+/* Mobile-optimized hero buttons */
+@media (max-width: 640px) {
+  .hero-buttons a {
+    width: 100% !important;
+    padding: 16px 24px !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .hero-buttons {
+    gap: 12px !important;
+  }
+}
