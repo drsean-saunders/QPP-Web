@@ -12,15 +12,20 @@
 
 .pie-container {
   position: relative;
-  width: 100%;
-  max-width: 450px; /* cap size on larger screens */
+  width: min(80vw, 450px); /* responsive: 80% of viewport width, max 450px */
+  height: min(80vw, 450px); /* maintain square aspect ratio */
   aspect-ratio: 1 / 1; /* keep perfect square to avoid skew */
-  margin: 0 auto;
+  margin: 0 auto !important;
   border-radius: 50%;
   border: 4px solid rgba(255, 255, 255, 0.2);
   overflow: hidden;
   background: #0f122b;
-  display: block; /* ensure it's a block for auto-centering */
+  display: block !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important; /* perfect centering */
+  right: auto !important;
+  float: none !important;
+  clear: both !important;
 }
 
 .pie-container .wheel {
@@ -134,11 +139,32 @@
 
 @media (max-width: 768px) {
   .pie-container {
-    max-width: 350px; /* softer cap on small screens */
-    aspect-ratio: 1 / 1; /* maintain square */
-    margin-left: auto;
-    margin-right: auto; /* reinforce centering on mobile */
+    width: min(90vw, 350px) !important; /* larger on mobile: 90% of viewport width, max 350px */
+    height: min(90vw, 350px) !important; /* maintain square */
+    left: 50% !important;
+    transform: translateX(-50%) !important; /* perfect centering */
+    margin: 0 auto !important;
+    position: relative !important;
   }
+  
+  /* Force centering of the entire pillars section on mobile */
+  #services .mx-auto {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  /* Override any grid or flexbox that might be shifting the wheel */
+  #services {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
   
   .pillar-section {
     width: 300px;
