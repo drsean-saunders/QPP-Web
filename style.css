@@ -12,13 +12,20 @@
 
 .pie-container {
   position: relative;
-  width: 450px;
-  height: 450px;
+  width: 100%;
+  max-width: 450px; /* cap size on larger screens */
+  aspect-ratio: 1 / 1; /* keep perfect square to avoid skew */
   margin: 0 auto;
   border-radius: 50%;
   border: 4px solid rgba(255, 255, 255, 0.2);
   overflow: hidden;
   background: #0f122b;
+  display: block; /* ensure it's a block for auto-centering */
+}
+
+.pie-container .wheel {
+  display: block;
+  margin: 0 auto; /* center SVG within container */
 }
 
 .pillar-section {
@@ -127,8 +134,10 @@
 
 @media (max-width: 768px) {
   .pie-container {
-    width: 350px;
-    height: 350px;
+    max-width: 350px; /* softer cap on small screens */
+    aspect-ratio: 1 / 1; /* maintain square */
+    margin-left: auto;
+    margin-right: auto; /* reinforce centering on mobile */
   }
   
   .pillar-section {
@@ -1203,4 +1212,82 @@ html body .text-6xl.font-bold {
   font-weight: 800;
   font-style: normal;
   font-display: swap;
+}
+
+/* === Overrides: Mobile menu layering and solid background === */
+/* Ensure mobile dropdown menu renders above all layers */
+#mobile-menu {
+  position: relative !important; /* ensure z-index applies */
+  z-index: 9999 !important; /* keep original Tailwind sizing/position, just lift layer */
+  background-color: #0f122b !important; /* fully opaque background */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Prevent background scroll when menu is open */
+body.menu-open {
+  overflow: hidden !important;
+}
+
+/* === Global stacking to ensure components sit above background layers === */
+body header,
+body section,
+body footer,
+body .content-wrapper,
+body nav,
+body .rounded-2xl,
+body .rounded-xl {
+  position: relative;
+  z-index: 10;
+}
+
+/* Keep background-only layers behind all content */
+.bg-grid { z-index: -2 !important; }
+.background-orb { z-index: -1 !important; }
+
+/* Ensure header CTA buttons are fully vibrant (no blue overlay) */
+.header-cta {
+  position: relative !important;
+  z-index: 9999 !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: linear-gradient(90deg, #F8B636 0%, #E78935 50%, #AC4B2C 100%) !important;
+  color: white !important;
+  transform: translateZ(0) !important; /* force hardware acceleration */
+  will-change: auto !important;
+}
+
+/* Force header CTA to be completely isolated from parent styling */
+header .header-cta {
+  background: linear-gradient(90deg, #F8B636 0%, #E78935 50%, #AC4B2C 100%) !important;
+  color: white !important;
+  opacity: 1 !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Gradient layer directly behind CTA text to match homepage */
+.header-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1; /* behind the text inside the button */
+  background: linear-gradient(90deg, #F8B636 0%, #E78935 50%, #AC4B2C 100%);
+}
+
+/* Make background solid across all pages */
+html, body {
+  background-color: #042449 !important;
+  background-image: url('Background3.png') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }

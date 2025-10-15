@@ -47,15 +47,15 @@
         
         <a href="contact.html" class="hidden md:block rounded-2xl px-4 py-2 bg-gradient-to-r from-[#F8B636] via-[#E78935] to-[#AC4B2C] text-sm font-medium shadow">Let's Connect</a>
       </div>
-      <!-- Mobile Navigation Menu (anchored to header) -->
-      <div id="mobile-menu" class="hidden md:hidden absolute top-full right-6 w-64 bg-[#0f122b]/95 backdrop-blur border border-white/10 rounded-b-2xl shadow-lg z-50">
-        <div class="px-6 py-4 space-y-3">
-          <a href="Services.html" class="block py-2 text-sm hover:opacity-80">Services</a>
-          <a href="about.html" class="block py-2 text-sm hover:opacity-80">About Us</a>
-          <a href="insights.html" class="block py-2 text-sm hover:opacity-80 hidden">Insights</a>
-          <a href="careers.html" class="block py-2 text-sm hover:opacity-80 hidden">Careers</a>
-          <a href="contact.html" class="block py-2 text-sm hover:opacity-80">Contact</a>
-          <a href="contact.html" class="block mt-4 rounded-2xl px-4 py-2 bg-gradient-to-r from-[#F8B636] via-[#E78935] to-[#AC4B2C] text-sm font-medium shadow text-center">Let's Connect</a>
+      <!-- Mobile Navigation Menu (in-flow, horizontal row) -->
+      <div id="mobile-menu" class="hidden md:hidden w-full bg-[#0f122b]/95 border-t border-white/10 shadow-lg">
+        <div class="px-4 py-3 flex items-center gap-4 overflow-x-auto whitespace-nowrap">
+          <a href="Services.html" class="py-2 text-sm hover:opacity-80">Services</a>
+          <a href="about.html" class="py-2 text-sm hover:opacity-80">About Us</a>
+          <a href="insights.html" class="py-2 text-sm hover:opacity-80 hidden">Insights</a>
+          <a href="careers.html" class="py-2 text-sm hover:opacity-80 hidden">Careers</a>
+          <a href="contact.html" class="py-2 text-sm hover:opacity-80">Contact</a>
+          <a href="contact.html" class="rounded-2xl px-4 py-2 bg-gradient-to-r from-[#F8B636] via-[#E78935] to-[#AC4B2C] text-sm font-medium shadow">Let's Connect</a>
         </div>
       </div>
     </header>
@@ -100,7 +100,7 @@
             <style>
               .wedge { cursor: pointer; transition: transform .25s ease, filter .25s ease; transform-origin: 225px 225px; }
               .wedge:hover { transform: scale(1.05); filter: brightness(1.1); }
-              .wedge text { font: 700 14px system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill: #fff; text-anchor: middle; dominant-baseline: middle; pointer-events: none; }
+              .wedge text { font: 700 18px system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill: #fff; text-anchor: middle; dominant-baseline: middle; pointer-events: none; }
             </style>
             <!-- Geometry constants: center (225,225), radius 200 to keep outer gap -->
             <!-- Wedge 1: 0° -> 120° (Yellow) -->
@@ -200,7 +200,7 @@
               <div class="flex items-center justify-between">
                 <div>
                   <p class="font-semibold">Seth Weiss</p>
-                  <p class="text-sm text-white/70">Managing Partner & Co-Founder</p>
+                  <p class="text-sm text-white/70">Managing Partner</p>
                 </div>
                 <a href="https://www.linkedin.com/in/sethweiss13/" target="_blank" rel="noopener" class="text-sm underline hover:opacity-80">LinkedIn</a>
               </div>
@@ -284,16 +284,33 @@
       </div>
     </section>
 
-    <!-- ===== CTA ===== -->
-    <section id="contact" class="py-20 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold">Turn complexity into enterprise value.</h2>
-      <form id="contact-form" class="mt-8 grid md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
-        <input name="name" placeholder="Your Name" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
-        <input name="email" type="email" placeholder="Your Email" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
-        <textarea name="message" placeholder="Your Message" rows="4" class="rounded-xl px-4 py-3 bg-white/90 text-black md:col-span-2"></textarea>
-        <button type="submit" class="rounded-xl px-5 py-3 bg-gradient-to-r from-[#F8B636] via-[#E78935] to-[#AC4B2C] text-white font-semibold shadow">Request Intro</button>
-      </form>
-      <p class="mt-6 text-sm">231 Detroit St #100, Denver, CO 80206</p>
+    <!-- ===== CONTACT (Full form from Contact page) ===== -->
+    <section id="contact" class="py-16">
+      <div class="mx-auto max-w-3xl px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Tell us how we can help — our team will reach out as soon as possible.</h2>
+      </div>
+      <div class="mx-auto max-w-3xl px-6">
+        <form id="contact-form" class="mt-8 grid md:grid-cols-2 gap-4 text-left">
+          <input name="name" placeholder="Name" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
+          <input name="email" type="email" placeholder="Email" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
+          <input name="company" placeholder="Company" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
+          <input name="phone" placeholder="Phone" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
+          <input name="role" placeholder="Role" class="rounded-xl px-4 py-3 bg-white/90 text-black md:col-span-2" />
+          <select name="topic" class="rounded-xl px-4 py-3 bg-white/90 text-black md:col-span-2">
+            <option value="" disabled selected>How can we help? (Select a topic)</option>
+            <option>Sell-Side</option>
+            <option>Buy-Side</option>
+            <option>Strategy Execution</option>
+            <option>Digital Transformation</option>
+            <option>Other</option>
+          </select>
+          <textarea name="message" placeholder="Message" rows="5" class="rounded-xl px-4 py-3 bg-white/90 text-black md:col-span-2"></textarea>
+          <div class="md:col-span-2">
+            <button type="submit" class="rounded-xl px-5 py-3 bg-white text-[#0f122b] font-semibold shadow">Submit Inquiry</button>
+          </div>
+        </form>
+        <p class="mt-6 text-sm text-center">231 Detroit St #100, Denver, CO 80206</p>
+      </div>
     </section>
 
     
