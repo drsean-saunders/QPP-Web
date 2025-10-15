@@ -12,8 +12,8 @@
 
 .pie-container {
   position: relative;
-  width: min(80vw, 450px); /* responsive: 80% of viewport width, max 450px */
-  height: min(80vw, 450px); /* maintain square aspect ratio */
+  width: 50vw; /* always 50% of viewport width */
+  height: 50vw; /* maintain square aspect ratio */
   aspect-ratio: 1 / 1; /* keep perfect square to avoid skew */
   margin: 0 auto !important;
   border-radius: 50%;
@@ -21,11 +21,8 @@
   overflow: hidden;
   background: #0f122b;
   display: block !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important; /* perfect centering */
-  right: auto !important;
-  float: none !important;
-  clear: both !important;
+  max-width: 500px; /* cap on very large screens */
+  max-height: 500px; /* cap on very large screens */
 }
 
 .pie-container .wheel {
@@ -139,12 +136,12 @@
 
 @media (max-width: 768px) {
   .pie-container {
-    width: min(90vw, 350px) !important; /* larger on mobile: 90% of viewport width, max 350px */
-    height: min(90vw, 350px) !important; /* maintain square */
-    left: 50% !important;
-    transform: translateX(-50%) !important; /* perfect centering */
-    margin: 0 auto !important;
     position: relative !important;
+    width: 60vw !important; /* slightly larger on mobile: 60% of viewport width */
+    height: 60vw !important; /* maintain square */
+    margin: 0 auto !important;
+    max-width: 300px; /* reasonable cap on mobile */
+    max-height: 300px; /* reasonable cap on mobile */
   }
   
   /* Force centering of the entire pillars section on mobile */
