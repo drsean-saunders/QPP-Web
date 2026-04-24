@@ -1,470 +1,219 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quantum Performance Partners</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="text-white about-page index-page">
-  <div class="bg-grid"></div>
 
-  <!-- Background Orbs -->
-  <div class="background-orb orb-first"></div>
-  <!--<div class="background-orb orb-second"></div>-->
-  <div class="background-orb orb-third"></div>
-
-  <!-- Glassmorphism Content Wrapper -->
-  <div class="content-wrapper content-wrapper--home">
-
-    <!-- ===== NAV ===== -->
-    <header class="relative z-10 backdrop-blur bg-[#0f122b]/60 border-b border-white/10 rounded-t-2xl edge-to-edge">
-      <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-        <a href="index.html" class="font-semibold tracking-wide text-xl">
-          <span class="inline-flex items-center text-[#0f122b] px-1 py-0 rounded-xl shadow leading-none">
-            <img src="LOGO-01.png" alt="Quantum Performance Partners" class="h-20 mr-3" />
-            <div class="text-left">
-              <div class="text-2xl font-bold text-white text-center">Quantum</div>
-              <div class="text-base font-light text-white">Performance Partners</div>
-            </div>
-          </span>
-        </a>
-        <nav class="hidden md:flex gap-8 text-sm">
-          <a href="Services.html" class="hover:opacity-80">Services</a>
-          <a href="about.html" class="hover:opacity-80">About Us</a>
-          <a href="insights.html" class="hover:opacity-80 hidden">Insights</a>
-          <a href="careers.html" class="hover:opacity-80 hidden">Careers</a>
-          <a href="contact.html" class="hover:opacity-80">Contact</a>
-        </nav>
-        
-        <!-- Mobile menu button -->
-        <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-white/10">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-        
-        <a href="contact.html" class="hidden md:block rounded-2xl px-4 py-2 bg-gradient-to-r from-[#F8B636] via-[#E78935] to-[#AC4B2C] text-sm font-medium shadow">Let's Connect</a>
-      </div>
-      <!-- Mobile Navigation Menu (in-flow, horizontal row) -->
-      <div id="mobile-menu" class="hidden md:hidden w-full bg-[#0f122b]/95 border-t border-white/10 shadow-lg">
-        <div class="px-4 py-3 flex items-center gap-4 overflow-x-auto whitespace-nowrap">
-          <a href="Services.html" class="py-2 text-sm hover:opacity-80">Services</a>
-          <a href="about.html" class="py-2 text-sm hover:opacity-80">About Us</a>
-          <a href="insights.html" class="py-2 text-sm hover:opacity-80 hidden">Insights</a>
-          <a href="careers.html" class="py-2 text-sm hover:opacity-80 hidden">Careers</a>
-          <a href="contact.html" class="py-2 text-sm hover:opacity-80">Contact</a>
-          <a href="contact.html" class="rounded-2xl px-4 py-2 bg-gradient-to-r from-[#F8B636] via-[#E78935] to-[#AC4B2C] text-sm font-medium shadow">Let's Connect</a>
-        </div>
-      </div>
-    </header>
-
-    <!-- ===== HERO ===== -->
-    <section class="py-20">
-      <div class="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <p class="uppercase text-xs tracking-[0.2em] text-white/60">Technology-Driven</p>
-          <h1 class="mt-3 text-4xl md:text-6xl font-bold leading-tight">
-            Where Strategy Meets Execution
-          </h1>
-          <p class="mt-4 text-white/80 max-w-xl">
-            Transforming potential into unparalleled results for private equity and portfolio companies worldwide.
-          </p>
-          <div class="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-4 hero-buttons">
-            <a href="#contact" class="rounded-xl px-6 py-4 bg-white text-[#0f122b] font-semibold shadow text-center sm:text-left">Schedule a Consultation</a>
-            <a href="#services" class="rounded-xl px-6 py-4 ring-1 ring-white/30 hover:ring-white/60 text-center sm:text-left">Explore Our Services</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
+QUANTUM
+PERFORMANCE PARTNERS
 
 
-    <!-- ===== OUR THREE PILLARS (Services) ===== -->
-    <section id="services" class="py-20">
-      <div class="mx-auto max-w-7xl px-6">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Pillars of Value</h2>
-          <p class="text-white/70 text-lg max-w-2xl mx-auto">
-            We deliver results — not hours. Click any pillar to explore our capabilities.
-          </p>
-          <p class="text-white/70 max-w-3xl mx-auto mt-4">
-            At Quantum, we’re more than advisors. We are transformation partners who embed with your team, accelerate execution, and deliver measurable value across the deal lifecycle.
-          </p>
-        </div>
 
-        <!-- Interactive Pie Chart -->
-        <div class="pie-container">
-          <svg class="wheel" width="100%" height="100%" viewBox="0 0 450 450" xmlns="http://www.w3.org/2000/svg">
-            <style>
-              .wedge { cursor: pointer; transition: transform .25s ease, filter .25s ease; transform-origin: 225px 225px; }
-              .wedge:hover { transform: scale(1.05); filter: brightness(1.1); }
-              .wedge text { font: 700 18px system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill: #fff; text-anchor: middle; dominant-baseline: middle; pointer-events: none; }
-            </style>
-            <!-- Geometry constants: center (225,225), radius 200 to keep outer gap -->
-            <!-- Wedge 1: 0° -> 120° (Yellow) -->
-            <g class="wedge" onclick="navigateToService('ma-execution')">
-              <path fill="#F8B636" d="M225,225 L425,225 A200,200 0 0 1 125,398.2 Z"/>
-              <text x="285" y="315" text-anchor="middle" dominant-baseline="middle">
-                  <tspan x="285" dy="-0.6em">M&A</tspan>
-                  <tspan x="285" dy="1.2em">Advisory</tspan>
-              </text>
-            </g>
-            <!-- Wedge 2: 120° -> 240° (Orange) -->
-            <g class="wedge" onclick="navigateToService('operational-transformation')">
-              <path fill="#E78935" d="M225,225 L125,398.2 A200,200 0 0 1 125,51.8 Z"/>
-              <text x="120" y="225" text-anchor="middle" dominant-baseline="middle">
-                  <tspan x="120" dy="-0.6em">Strategy</tspan>
-                  <tspan x="120" dy="1.2em">Execution Partners</tspan>
-                </text>
-            </g>
-            <!-- Wedge 3: 240° -> 360° (Red) -->
-            <g class="wedge" onclick="navigateToService('industry-capability')">
-              <path fill="#AC4B2C" d="M225,225 L125,51.8 A200,200 0 0 1 425,225 Z"/>
-              <text x="285" y="135" text-anchor="middle" dominant-baseline="middle">
-                <tspan x="285" dy="-0.6em">AI &amp; Digital</tspan>
-                <tspan x="285" dy="1.2em">Transformation</tspan>
-              </text>
-            </g>
-          </svg>
-        </div>
-
-        <!-- Description -->
-        <div class="mt-16 text-center">
-          <p class="text-white/60 text-sm">
-            Each pillar represents a core area of expertise that drives enterprise value creation
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROOF & CREDIBILITY STRIP ===== -->
-    <section class="py-12">
-      <div class="mx-auto max-w-7xl px-6 text-center">
-        <p class="uppercase text-xs tracking-[0.2em] text-white/60 mb-4">Trusted Globally</p>
-        <h3 class="text-xl md:text-2xl font-semibold mb-2">Trusted by private equity firms and portfolio companies worldwide</h3>
-        <p class="text-white/80 max-w-3xl mx-auto">Recognized for thought leadership, research, and execution expertise — including Top 50 Business Transformers and Inc. 100 mentions.</p>
-        <div class="mt-6 flex flex-wrap items-center justify-center gap-6 opacity-90">
-          <img src="LOGO-01.png" alt="Quantum Mark" class="h-12">
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== LEADERSHIP (Preview) ===== -->
-    <section id="leadership" class="py-20">
-      <div class="mx-auto max-w-7xl px-6">
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-          <h2 class="text-3xl md:text-4xl font-bold">Leadership</h2>
-          <a href="about.html#who-we-are" class="text-sm underline hover:opacity-80 whitespace-nowrap">Meet the full team →</a>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Dr. Sean Saunders -->
-          <div class="rounded-2xl p-4 md:p-6 border border-white/10 bg-white/5">
-            <div class="w-full h-48 md:h-56 flex items-center justify-center overflow-hidden rounded-image">
-              <img src="Sean+Saunders_Quantum+PP.webp" alt="Dr. Sean Saunders" class="w-full h-full object-contain">
-            </div>
-            <div class="mt-4">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                <div>
-                  <p class="font-semibold">Dr. Sean Saunders</p>
-                  <p class="text-sm text-white/70">Managing Partner & Founder</p>
-                </div>
-                <a href="https://www.linkedin.com/in/therealdrsean/" target="_blank" rel="noopener" class="text-sm underline hover:opacity-80 whitespace-nowrap">LinkedIn</a>
-              </div>
-              <div class="mt-3 text-sm text-white/80">
-                <p class="font-semibold mb-2">Education & Credentials:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>Doctor of Computer Science, Colorado Technical University</li>
-                  <li>Certified Professional in Supply Management (CPSM)</li>
-                </ul>
-                <p class="font-semibold mb-2 mt-3">Experience:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>CFO and COO for multiple Private Equity backed companies</li>
-                  <li>Published author with patents in AI, Business, and Medicine</li>
-                  <li>Recognized by The Enterprise World and Titan 100</li>
-                </ul>
-                <p class="font-semibold mb-2 mt-3">Specialization:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>Information Technology and Digitalization</li>
-                  <li>Finance and Accounting</li>
-                  <li>Operations and M&A</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sean Plumb -->
-          <div class="rounded-2xl p-4 md:p-6 border border-white/10 bg-white/5">
-            <div class="w-full h-48 md:h-56 flex items-center justify-center overflow-hidden rounded-image">
-              <img src="WhatsApp Image 2026-01-13 at 5.38.30 PM.jpeg" alt="Sean Plumb" class="w-full h-full object-contain">
-            </div>
-            <div class="mt-4">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                <div>
-                  <p class="font-semibold">Sean Plumb</p>
-                  <p class="text-sm text-white/70">Managing Director</p>
-                </div>
-                <a href="https://www.linkedin.com/in/seanplumb/" target="_blank" rel="noopener" class="text-sm underline hover:opacity-80 whitespace-nowrap">LinkedIn</a>
-              </div>
-              <div class="mt-3 text-sm text-white/80">
-                <p class="font-semibold mb-2">Education & Credentials:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>MBA, University of Denver – Daniels College of Business</li>
-                  <li>M.A., Music Theory & Composition, Western Colorado University</li>
-                </ul>
-                <p class="font-semibold mb-2 mt-3">Experience:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>Founder & Principal of SP Consultants, LLC (17+ years)</li>
-                  <li>20+ years in SBA, commercial banking, and advisory roles</li>
-                  <li>Led bank consolidations, real estate refinancing, and FX risk</li>
-                  <li>20+ years in institutional investment services</li>
-                </ul>
-                <p class="font-semibold mb-2 mt-3">Specialization:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>Capital Access & SBA / Commercial Financing</li>
-                  <li>Cash Flow Optimization & Risk Management</li>
-                  <li>Growth Strategy & Early-Stage Exit Planning</li>
-                  <li>Banking Consolidation & Complex Credit Structures</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Seth Weiss -->
-          <div class="rounded-2xl p-4 md:p-6 border border-white/10 bg-white/5 md:col-span-2 lg:col-span-1 md:mx-auto md:max-w-md lg:max-w-none">
-            <div class="w-full h-48 md:h-56 flex items-center justify-center overflow-hidden rounded-image">
-              <img src="Headshot - Seth.jpeg" alt="Seth Weiss" class="w-full h-full object-contain">
-            </div>
-            <div class="mt-4">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                <div>
-                  <p class="font-semibold">Seth Weiss</p>
-                  <p class="text-sm text-white/70">Managing Partner</p>
-                </div>
-                <a href="https://www.linkedin.com/in/sethweiss13/" target="_blank" rel="noopener" class="text-sm underline hover:opacity-80 whitespace-nowrap">LinkedIn</a>
-              </div>
-              <div class="mt-3 text-sm text-white/80">
-                <p class="font-semibold mb-2">Experience:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>25+ years leading operations, sales, and growth initiatives</li>
-                  <li>Corporate M&A law, entrepreneurship, and executive roles</li>
-                  <li>Scaled revenue engines and commercialized disruptive platforms</li>
-                </ul>
-                <p class="font-semibold mb-2 mt-3">Credentials & Methodology:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>Certified Executive Coach</li>
-                  <li>Creator of the "Beyond A Sale" methodology</li>
-                  <li>Builds high-performing teams with curiosity, trust, and accountability</li>
-                </ul>
-                <p class="font-semibold mb-2 mt-3">Specialization:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>SaaS, AI, and consulting industries</li>
-                  <li>Legal rigor and operational expertise</li>
-                  <li>Strategy and execution for lower middle market companies</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 text-center">
-          <a href="about.html" class="rounded-xl px-5 py-3 bg-white text-[#0f122b] font-semibold shadow inline-block">Learn more about us</a>
-        </div>
-      </div>
-    </section>
+About
+Services
+ M&A Advisory
+ AI & Digitalization
+ Operational Advisory
+Team
+Research
+231 DETROIT ST, SUITE 100  ·  CHERRY CREEK, CO 80206
+SCHEDULE A DISCOVERY CALL
 
 
-    <!-- ===== WHY US ===== -->
-    <section id="whyus" class="py-20">
-      <div class="mx-auto max-w-7xl px-6">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Built Different. Built for Results.</h2>
-        <p class="max-w-3xl text-base md:text-lg leading-relaxed text-white/90 mb-6">
-          Other firms bill hours and extend engagements. Quantum was built to deliver outcomes. Our team of senior private equity executives and thought leaders embeds directly with management teams to drive execution. We don't stop until measurable value is created.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
-          <div class="rounded-2xl border border-white/10 p-4 bg-white/5">
-            <p class="font-semibold mb-1">Quantum</p>
-            <ul class="text-sm text-white/90 list-disc pl-5 space-y-1">
-              <li>Outcomes-first</li>
-              <li>Embedded leadership</li>
-              <li>Proprietary digital tools</li>
-            </ul>
-          </div>
-          <div class="rounded-2xl border border-white/10 p-4 bg-white/5">
-            <p class="font-semibold mb-1">Traditional Firms</p>
-            <ul class="text-sm text-white/90 list-disc pl-5 space-y-1">
-              <li>Billable hours</li>
-              <li>Slide decks only</li>
-              <li>No ownership in execution</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===== RESULTS SNAPSHOT ===== -->
-    <section class="py-20">
-      <div class="mx-auto max-w-7xl px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold">Proven Impact. Real Results.</h2>
-        <div class="mt-8 grid md:grid-cols-3 gap-6">
-          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
-            <p class="text-3xl font-bold">$100M+</p>
-            <p class="text-white/80">EBITDA uplift delivered</p>
-          </div>
-          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
-            <p class="text-3xl font-bold">Up to 12 mo</p>
-            <p class="text-white/80">accelerated exits</p>
-          </div>
-          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
-            <p class="text-3xl font-bold">&lt; 90 days</p>
-            <p class="text-white/80">digital transformation roadmaps executed</p>
-          </div>
-        </div>
-      </div>
-    </section>
+M&A ADVISORY  ·  AI & DIGITALIZATION  ·  OPERATIONAL ADVISORY
+Others Follow. Quantum Leads.
+The only fully integrated advisory firm built to architect certainty at every level of the deal cycle — from the boardroom to the portfolio floor.
+SCHEDULE A DISCOVERY CALL
 
-    <!-- ===== CONTACT (Full form from Contact page) ===== -->
-    <section id="contact" class="py-16">
-      <div class="mx-auto max-w-3xl px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold">Tell us how we can help — our team will reach out as soon as possible.</h2>
-      </div>
-      <div class="mx-auto max-w-3xl px-6">
-        <form id="contact-form" class="mt-8 grid md:grid-cols-2 gap-4 text-left">
-          <input name="name" placeholder="Name" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
-          <input name="email" type="email" placeholder="Email" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
-          <input name="company" placeholder="Company" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
-          <input name="phone" placeholder="Phone" class="rounded-xl px-4 py-3 bg-white/90 text-black" />
-          <input name="role" placeholder="Role" class="rounded-xl px-4 py-3 bg-white/90 text-black md:col-span-2" />
-          <select name="topic" class="rounded-xl px-4 py-3 bg-white/90 text-black md:col-span-2">
-            <option value="" disabled selected>How can we help? (Select a topic)</option>
-            <option>Sell-Side</option>
-            <option>Buy-Side</option>
-            <option>Strategy Execution</option>
-            <option>Digital Transformation</option>
-            <option>Other</option>
-          </select>
-          <textarea name="message" placeholder="Message" rows="5" class="rounded-xl px-4 py-3 bg-white/90 text-black md:col-span-2"></textarea>
-          <div class="md:col-span-2">
-            <button type="submit" class="rounded-xl px-5 py-3 bg-white text-[#0f122b] font-semibold shadow">Submit Inquiry</button>
-          </div>
-        </form>
-        <p class="mt-6 text-sm text-center">231 Detroit St #100, Denver, CO 80206</p>
-      </div>
-    </section>
+OUR PHILOSOPHY
 
-    
+~$5B
+TOTAL DEAL VALUE OF TEAM
+75+
+PORTCO ACQUISITIONS & EXITS
+20x
+MOIC — LAST PORTFOLIO EXIT
+25+
+AVG. YEARS OF TEAM TENURE
 
-    <!-- ===== FOOTER (Consistent Across Pages) ===== -->
-    <footer class="py-10 border-t border-white/10">
-      <div class="mx-auto max-w-7xl px-6 grid md:grid-cols-3 items-center gap-6 text-sm text-white/70">
-        <!-- Left: Social -->
-        <div class="flex gap-4 justify-center md:justify-start">
-          <a href="https://www.linkedin.com/company/quantum-performance-partners" target="_blank" rel="noopener" class="hover:opacity-80">LinkedIn</a>
-        </div>
+CM&AA CREDENTIALED
 
-        <!-- Center: Quick nav -->
-        <nav class="flex flex-wrap gap-6 justify-center">
-          <a href="index.html" class="hover:opacity-80">Home</a>
-          <a href="Services.html" class="hover:opacity-80">Services</a>
-          <a href="about.html" class="hover:opacity-80">About Us</a>
-          <a href="contact.html" class="hover:opacity-80">Contact</a>
-        </nav>
+CPSM CERTIFIED
 
-        <!-- Right: Address & Copyright -->
-        <div class="text-center md:text-right">
-          <p class="mb-2">231 Detroit St #100<br/>Denver, CO 80206</p>
-          © 2025 Quantum Performance Partners
-        </div>
-      </div>
-    </footer>
+LEAN SIX SIGMA MASTER BLACK BELT
 
-  </div> <!-- end content-wrapper -->
+DOCTORATE IN COMPUTER SCIENCE
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
-  
-  <!-- Inline mobile menu script for immediate functionality -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const btn = document.getElementById('mobile-menu-button');
-      const menu = document.getElementById('mobile-menu');
-      
-      if (btn && menu) {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          menu.classList.toggle('hidden');
-        });
-        
-        // Close menu when clicking links
-        menu.querySelectorAll('a').forEach(function(link) {
-          link.addEventListener('click', function() {
-            menu.classList.add('hidden');
-          });
-        });
-      }
+AM&AA MEMBER
 
-      // Contact form submission
-      const form = document.getElementById('contact-form');
-      if (form) {
-        form.addEventListener('submit', async function(e) {
-          e.preventDefault(); // stop HTML form submission
+ACG AFFILIATED
 
-          // Collect form data
-          const name = form.querySelector('[name="name"]').value.trim();
-          const email = form.querySelector('[name="email"]').value.trim();
-          const company = form.querySelector('[name="company"]').value.trim();
-          const phone = form.querySelector('[name="phone"]').value.trim();
-          const role = form.querySelector('[name="role"]').value.trim();
-          const topic = form.querySelector('[name="topic"]').value.trim(); // dropdown
-          const message = form.querySelector('[name="message"]').value.trim();
+~$5B TOTAL DEAL VALUE OF TEAM
 
-          // Validate required fields
-          if (!name || !email || !message) {
-            alert('Please fill in at least Name, Email, and Message.');
-            return;
-          }
+75+ PORTCO ACQUISITIONS & EXITS
 
-          // Button feedback
-          const submitButton = form.querySelector('button[type="submit"], input[type="submit"]');
-          const originalText = submitButton.textContent;
-          submitButton.textContent = 'Sending...';
-          submitButton.disabled = true;
+20X MOIC LAST PORTFOLIO EXIT
 
-          try {
-            const response = await fetch("https://unstabledesigns.app.n8n.cloud/webhook/contact-form", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                name,
-                email,
-                company,
-                phone,
-                role,
-                topic,
-                message
-              })
-            });
+25+ YEARS AVERAGE TEAM TENURE
 
-            if (response.ok) {
-              // Redirect or show success
-              window.location.href = '/thank-you.html';
-            } else {
-              console.error('Webhook error:', response.statusText);
-              alert('Something went wrong. Please try again.');
-            }
-          } catch (error) {
-            console.error('Network error:', error);
-            alert('There was an error submitting your form. Please try again.');
-          } finally {
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-          }
-        });
-      }
-    });
-  </script>
-  
-</body>
-</html>
+LOWER & MIDDLE MARKET UP TO $250M REVENUE
+
+CHERRY CREEK, CO  ·  NATIONAL PRACTICE
+
+CM&AA CREDENTIALED
+
+CPSM CERTIFIED
+
+LEAN SIX SIGMA MASTER BLACK BELT
+
+DOCTORATE IN COMPUTER SCIENCE
+
+AM&AA MEMBER
+
+ACG AFFILIATED
+
+~$5B TOTAL DEAL VALUE OF TEAM
+
+75+ PORTCO ACQUISITIONS & EXITS
+
+20X MOIC LAST PORTFOLIO EXIT
+
+25+ YEARS AVERAGE TEAM TENURE
+
+LOWER & MIDDLE MARKET UP TO $250M REVENUE
+
+CHERRY CREEK, CO  ·  NATIONAL PRACTICE
+THE FIRM
+Built for the Modern PE Environment
+
+PE advisory has evolved. Quantum is the new modern standard. Grounded in original industry research and built on protected intellectual frameworks, QPP's standard has been proven in the field and validated by acquisitions, exits, and outsized MOIC returns.
+The only fully integrated team with the experience, know-how, and capabilities to architect outcomes at every level and function of your organization.
+OUR PHILOSOPHY
+
+M&A Advisory
+Every phase. Every workstream. Every outcome. Full-cycle sell-side and buy-side transaction management from origination through post-close integration.
+AI & Digitalization
+Proprietary. Original. Academically validated. The DMSA framework converts technology diligence into a measurable driver of enterprise value.
+Operational Advisory
+Every function. Every stage. From diligence through transformation planning, operational improvement, and pre-exit preparation alongside your team.
+HOW WE ENGAGE
+Three Levels. One Integrated Team.
+QPP operates across three levels simultaneously — because real enterprise value is not created in isolation.
+LEVEL 01
+Portfolio Company
+Inside the business. Any stage. Any function. From transaction planning and diligence through post-close transition, the full hold period, and exit — one integrated plan, one point of accountability.
+LEVEL 02
+Fund / Portfolio Level
+Alongside your Operating Partner structure. Across the entire portfolio. Cross-portfolio synergies, consistent digitalization strategy, and operational improvements no single-company advisor ever sees.
+LEVEL 03
+PE Firm Level
+In direct support of the GP and firm-level team. Deal strategy, thesis development, AI adoption, capital deployment, diligence workflow, and building the firm's lasting operational advantage.
+WHAT WE DO
+Focused & Integrated Capabilities
+VIEW ALL SERVICES
+
+01
+M&A Advisory
+Full-cycle sell-side and buy-side transaction management spanning valuation, CIM development, curated buyer outreach, disciplined negotiation, and deal structuring built to protect your outcome.
+
+02
+AI & Technology Value Creation
+AI readiness, deployment, and full-stack acquisition technology integration engineered as a value creation discipline for PE-backed environments — not a cost center or a checkbox.
+
+03
+Operational Advisory
+Battle-tested operators embedded from Day 1 through exit, driving 100-day execution, EBITDA capture, integration, org design, and pre-exit positioning across the full hold period.
+
++
+Specialized Services
+Sale Readiness Assessment, DMSA, Capital Advisory, Fractional Executive Services, Office of the CFO, Performance Elevation Blueprint, and Active Portfolio Partnership.
+
+THE QPP DIFFERENCE
+Operator-Led Execution. Execution That Stays Behind.
+
+
+Operators First. Principal-Led. Always.
+We are former PE portfolio company executives who have lived every phase of the deal cycle from the inside and carried the same accountability you are placing on your portcos today.
+
+Player-Coaches, Not Sideline Advisors.
+We work inside your teams, not above them. We build, execute, and teach alongside your people so that when we leave, the capability stays behind. Your team owns the result.
+
+Unmatched Capability. One Accountable Team.
+Our deeply vetted operators integrate seamlessly into one team, one goal, one strategy, one plan, and one outcome. No conflicting agendas. No fragmented workstreams. No exceptions.
+"Most advisors see three independent levers. We see one system. The intentional balance between multiple arbitrage, financial engineering, and EBITDA expansion is where real enterprise value is created or destroyed."
+DR. SEAN SAUNDERS — MANAGING PARTNER & FOUNDER
+INSIGHTS & RESEARCH
+Intellectual Authority
+VIEW ALL RESEARCH
+
+DOCTORAL RESEARCH
+The Digitalization Strategies that Optimize Enterprise Values in Private Equity
+A qualitative exploratory study establishing AI as a measurable enterprise value creation discipline in the lower middle market.
+Colorado Technical University  ·  DCS Dissertation
+INDUSTRY RESEARCH
+SaaS is Dead, Long Live SaS: The Architecture Shift Redefining Platform Value
+Chronological precedence research on the SaaS-to-SaS transition and its implications for PE investment thesis construction and platform valuation.
+QPP Research Series  ·  2024
+SPEAKING & PANELS
+AI in Private Equity: From Checkbox to Value Creation Instrument
+CPE-accredited panel curriculum exploring practical AI frameworks in PE-backed environments. Submitted for AM&AA accreditation.
+AM&AA Panel Series  ·  2024
+THE ENGAGEMENT MODEL
+How QPP Enters Your Organization
+
+Every engagement follows the same discipline: full accountability, one integrated team, measurable outcomes tied to your thesis. Click any phase to see how we engage.
+1
+Discovery & Thesis Alignment
+We map your investment thesis, current portfolio state, and the specific value creation levers most material to your outcome.
+2
+Diligence & Assessment
+DMSA, sale readiness, operational benchmarking, financial normalization — across every dimension of the business simultaneously.
+3
+100-Day Execution Plan
+A thesis-aligned roadmap with defined milestones, resource allocation, and individual accountability — deployed at close, not after.
+4
+Embedded Execution
+Our team operates inside your portco — building capability, capturing EBITDA, and executing the plan with full accountability through the hold period.
+5
+Pre-Exit Positioning & Close
+Financial normalization, exit narrative development, management team preparation, data room coordination, and buyer-ready positioning for a premium outcome.
+PHASE 01 OF 05
+Discovery & Thesis Alignment
+We begin every engagement the same way — earning the right to be trusted with your thesis. We map your investment rationale, the value creation levers you have already identified, and the gaps between where the business is today and where it needs to be at exit. This phase produces a shared operating picture that all parties align to before a single dollar of execution begins.
+5–10
+BUSINESS DAYS
+1
+INTEGRATED PLAN
+100%
+ALIGNED BEFORE ACTION
+THE STANDARD
+QPP vs. Conventional Advisory
+This is what separates a partner who architects certainty from one who delivers a report and a bill.
+CAPABILITY
+QUANTUM PERFORMANCE PARTNERS
+CONVENTIONAL ADVISORS
+Engagement model
+✓Principal-led execution at every phase
+—Delegated to junior staff post-engagement
+M&A + Ops + AI in one team
+✓One fully integrated team across all three disciplines
+—Separate firms, fragmented accountability
+Proprietary AI diligence framework
+✓DMSA — academically validated, 10 dimensions
+—Generic IT checklist or none at all
+Operator pedigree
+✓Former PE portfolio company C-suite executives
+—Consulting or banking background only
+Value creation methodology
+✓Proprietary, academically grounded, field-validated
+—Off-the-shelf frameworks and generic playbooks
+Post-close execution
+✓Embedded through exit, capability stays behind
+—Engagement typically ends at close
+Fee alignment
+✓Aligned to outcomes, not billable hours
+—Retainer-based, billable hours incentivize duration
+Cross-level portfolio visibility
+✓Simultaneous portco / portfolio / PE firm execution
+—Single-company view, no cross-portfolio insight
+READY TO EXPLORE A PARTNERSHIP?
+Schedule a Discovery Call Today
+Let's discuss where you are in the deal cycle and how QPP can architect the certainty your portfolio demands.
+GET IN TOUCH
+
